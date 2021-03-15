@@ -1,6 +1,6 @@
 # surfline-cursor
 
-This is just the Chrome extension sampler so far...something we can build on.  Follow the link to install it: https://developer.chrome.com/docs/extensions/mv3/getstarted/
+This is just the Chrome extension sampler so far...something we can build on.  Follow these instructions to install it: (cf https://developer.chrome.com/docs/extensions/mv3/getstarted/):
 
 - Open the Extension Management page by navigating to chrome://extensions.
 -- Alternatively, open this page by clicking on the Extensions menu button and selecting Manage Extensions at the bottom of the menu.
