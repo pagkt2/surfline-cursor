@@ -6,7 +6,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "declarativeContent"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -22,5 +22,14 @@
     "48": "/images/get_started48.png",
     "128": "/images/get_started128.png"
   },
-  "options_page": "options.html"
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.surfline.com/*"],
+      "css": ["core.css"],
+      "js": ["core.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
 }
