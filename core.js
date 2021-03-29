@@ -1,14 +1,29 @@
-const MOUSE_VISITED_CLASSNAME = 'crx_mouse_over_waves';
+const lastPoint = {x: null, y: null}
+const imgURLRight = chrome.runtime.getURL("images/surfer-cursor-32px-right.cur");
+const imgURLLeft = chrome.runtime.getURL("images/surfer-cursor-32px-left.cur");
 
-const imgURL = chrome.runtime.getURL("images/surfer-cursor-32px.cur");
+document.addEventListener('mousemove', (e) => {
 
-document.addEventListener('mousemove', () => {
+  const leftOrRight = (
+    e.clientX > lastPoint.x ? 'right'
+    : e.clientX < lastPoint.x ? 'left'
+    : 'none'
+  )
+
   const waves = document.getElementsByClassName('jw-video jw-reset')
   if (waves.length){
     for (const wave of waves) {
-      if (!wave.style.cursor) {
-        wave.style.cursor = `url(${imgURL}), progress`
+      if (leftOrRight === 'right' && wave.style.cursor !== `url(${imgURLRight}), progress`) {
+        wave.style.cursor = `url(${imgURLRight}), progress`
+      }
+      if (leftOrRight === 'left' && wave.style.cursor !== `url(${imgURLLeft}), progress`) {
+        wave.style.cursor = `url(${imgURLLeft}), progress`
       }
     }
   }
+
+  lastPoint.x = e.clientX
+  lastPoint.y = e.clientY
+
+
 })

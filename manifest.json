@@ -33,7 +33,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["images/surfer-cursor-32px.cur"],
+      "resources": ["images/surfer-cursor-32px-left.cur", "images/surfer-cursor-32px-right.cur"],
       "matches": ["https://www.surfline.com/*"]
     }
   ]
