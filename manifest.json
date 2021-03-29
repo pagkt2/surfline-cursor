@@ -31,5 +31,11 @@
       "run_at": "document_end",
       "all_frames": true
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/surfer-cursor-32px.cur"],
+      "matches": ["https://www.surfline.com/*"]
+    }
   ]
 }
