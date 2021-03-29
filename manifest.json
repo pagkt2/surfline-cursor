@@ -26,7 +26,6 @@
   "content_scripts": [
     {
       "matches": ["https://www.surfline.com/*"],
-      "css": ["core.css"],
       "js": ["core.js"],
       "run_at": "document_end",
       "all_frames": true
